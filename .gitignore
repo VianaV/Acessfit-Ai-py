@@ -1,0 +1,43 @@
+# .gitignore
+# Arquivos e pastas que NÃO devem ir para o repositório Git
+
+# Variáveis de ambiente (NUNCA commitar!)
+.env
+
+# Ambiente virtual Python
+.venv/
+.test-venv/
+venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Distribuição / empacotamento
+dist/
+build/
+*.egg-info/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Cobertura de testes
+.coverage
+htmlcov/
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
