@@ -13,7 +13,7 @@ Nenhuma lógica de negócio deve existir aqui — apenas estrutura e validação
 
 from enum import Enum
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 # -------------------------------------------------------
@@ -110,9 +110,9 @@ class EvaluationRequest(BaseModel):
         examples=["Uso para produtividade em desenvolvimento de software."],
     )
 
-    class Config:
-        # Exemplo exibido no Swagger
-        json_schema_extra = {
+    # Exemplo exibido no Swagger
+    model_config = ConfigDict(
+        json_schema_extra={
             "example": {
                 "person_name": "João Silva",
                 "role": "Desenvolvedor Backend",
@@ -121,7 +121,8 @@ class EvaluationRequest(BaseModel):
                 "tool_type": "IA",
                 "business_context": "Uso para produtividade em desenvolvimento de software.",
             }
-        }
+        },
+    )
 
 
 # -------------------------------------------------------
@@ -183,8 +184,8 @@ class EvaluationResponse(BaseModel):
         description="Modelo de IA utilizado (ex: gpt-4o, gemini-pro).",
     )
 
-    class Config:
-        json_schema_extra = {
+    model_config = ConfigDict(
+        json_schema_extra={
             "example": {
                 "decision": "RECOMENDADO",
                 "score": 85,
@@ -200,4 +201,5 @@ class EvaluationResponse(BaseModel):
                 "provider": "openai",
                 "model": "gpt-4o",
             }
-        }
+        },
+    )

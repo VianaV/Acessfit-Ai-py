@@ -90,7 +90,7 @@ class RuleEngine:
                     "Avalie com cuidado se o uso será efetivo e necessário."
                 )
 
-        elif request.tool_type == ToolTypeEnum.SAAS:
+        else:
             # Para SaaS, é mais difícil inferir aderência sem conhecer a ferramenta específica
             observations.append(
                 "ℹ️ Ferramenta do tipo SaaS. Verifique se o cargo tem relação direta "

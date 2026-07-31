@@ -258,6 +258,33 @@ Controller → FastAPI → Cliente HTTP
 
 ### Persistência
 - [ ] **Banco de dados**: Adicionar SQLAlchemy ou SQLModel com PostgreSQL/SQLite para salvar histórico de avaliações.
+
+---
+
+## 🧪 Testes e cobertura
+
+Instale as dependências de desenvolvimento:
+
+```bash
+pip install -r requirements-dev.txt
+```
+
+Execute a suíte completa:
+
+```bash
+pytest
+```
+
+Os testes unitários validam schemas, prompts, regras, serviço, logging e o
+cliente OpenAI. Os testes de integração exercitam os endpoints FastAPI sem
+realizar chamadas externas: a resposta da OpenAI é simulada para manter a suíte
+rápida, determinística e sem custo.
+
+O projeto exige 100% de cobertura de linhas e ramificações da pasta `app`. O
+relatório detalhado também é criado em `htmlcov/index.html`.
+
+Para uma referência técnica curta nas próximas manutenções, consulte
+`PROJECT_CONTEXT.md`.
 - [ ] **Cache Redis**: Cachear avaliações idênticas para reduzir custo de API.
 
 ### Segurança e governança

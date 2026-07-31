@@ -6,6 +6,7 @@
 
 # Ambiente virtual Python
 .venv/
+.test-venv/
 venv/
 env/
 
